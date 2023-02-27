@@ -1,4 +1,4 @@
-const button = document.getElementById('convert-button')
+const button = document.getElementById('convert-Button')
 const select = document.getElementById('currency-select')
 
 
@@ -7,9 +7,9 @@ const euro = 5.7
 const bitcoins = 128582.23
 
 const convertValues = () => {
-    const inputReais = document.getElementById('input-real').value 
-    const realValueText = document.getElementById('real-value-text')
-    const currencyValueText =document.getElementById('currency-value-text')
+    const inputReais = document.getElementById("input-real").value 
+    const realValueText = document.getElementById("real-value-text")
+    const currencyValueText =document.getElementById("currency-value-text")
 
     realValueText.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
@@ -45,22 +45,23 @@ ChangeCurrency = () => {
 
     if ( select.value === "US$ Dólar Americano"){
         currencyName.innerHTML = "Dólar Americano"
-        currencyImg.src = "../Assets/estados-unidos (1) 1.png"
+        currencyImg.src = "../Assets/estados-unidos.png"
     }
 
     if ( select.value === "€ Euro"){
         currencyName.innerHTML = "Euro"
-        currencyImg.src = "../Assets/euro.png"
+        currencyImg.src = "../Assets/imagem-euro.png"
     }
 
     if ( select.value === "₿ bitcoins"){
         currencyName.innerHTML = "bitcoins"
-        currencyImg.src = "../Assets/bitcoins.png"
+        currencyImg.src = "../Assets/bitcoin.png"
     }
 
     convertValues()
 }   
 
 
-button.addEventListener('click', convertValues)
+
 select.addEventListener('change', ChangeCurrency)
+button.addEventListener("click", convertValues)
